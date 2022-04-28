@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Sign Up</h1>
+        </div>
+        <form action="" method="post">
+            
+            <!-- <span>Mobile Number</span><br> -->
+
+
+            <input id="" class="input-fields" type="text" placeholder="Name" required>
+            <input id="mobile" class="input-fields" type="tel" placeholder="Mobile Number" required>
+        
+        
+            <input id="OTP" class="input-fields" type="tel" placeholder="OTP">
+    
+    </form>
+
+        <div class="btn" id="getOTP">
+            <button onclick="myFunction(); hide(this)"> Get OTP</button>
+        </div>
+        <div class="btn" id="submit">
+            <button onclick="myFunction()">Submit</button>
+        </div>
+
+        <div class="extras">
+            <span>Already a Member?</span>
+            <a href="signin.html"><span>Sign in</span></a>
+        </div>
+
+
+        
+
+
+
+        
+        <script>
+            function myFunction() {
+                var x = document.getElementById("OTP");
+                var y = document.getElementById("submit");
+                var z = document.getElementById("mobile");
+                x.style.display = "block";
+                z.style.display = "none";
+                y.style.display = "flex";
+
+
+                console.log("hide");
+
+            }
+        </script>
+
+        <script>
+            function hide(x) {
+                x.style.display = 'none';
+            }
+        </script>
+
+
+
+    </div>
+</body>
+</html>

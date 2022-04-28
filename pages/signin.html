@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h2>LOGIN</h2>
+        </div>
+        <form action="" method="post">
+            
+                <!-- <span>Mobile Number</span><br> -->
+
+
+                <input id="mobile" class="input-fields" type="tel" placeholder="Mobile Number" required>
+            
+            
+                <input id="OTP" class="input-fields" type="tel" placeholder="OTP">
+        
+        </form>
+
+        <div class="btn" id="getOTP">
+            <button onclick="myFunction(); hide(this) ; startTimer(10) ; "> Get OTP</button>
+        </div>
+        <div class="btn" id="submit">
+            <button onclick="myFunction()">Submit</button>
+        </div>
+
+        <div class="extras">
+            <span>Not a Member?</span>
+            <a href="signup.html"><span>Sign Up</span></a>
+        </div>
+
+
+
+
+
+
+        <!-- ****************OTP TIMER**************************** -->
+        <div id="otp-timer">
+            <div>Resend OTP : <span id="timer"></span></div>
+            <div id="resend" onclick="hide(this)">
+                <a href="#" >Resend OTP</a>
+            </div>
+
+        </div>
+        <script>
+        
+            document.getElementById('timer').innerHTML =
+                00 + ":" + 11;
+
+
+            function startTimer() {
+                var h = document.getElementById('otp-timer');
+                h.style.display = "block";
+                var presentTime = document.getElementById('timer').innerHTML;
+                var timeArray = presentTime.split(/[:]+/);
+                var m = timeArray[0];
+                var s = checkSecond((timeArray[1] - 1));
+                if (s == 59) { m = m - 1 }
+                if (m < 0) {
+                    return
+                }
+
+                document.getElementById('timer').innerHTML =
+                    m + ":" + s;
+                console.log(m)
+                setTimeout(startTimer, 1000);
+
+            
+
+            function checkSecond(sec) {
+                if (sec < 10 && sec >= 0) { sec = "0" + sec }; // add zero in front of numbers < 10
+                if (sec < 0) { sec = "59" };
+                return sec;
+            }
+            
+            
+        }
+        document.getElementById('resend').onclick=()=>{
+                clearTimeout(timer);
+                document.getElementById('timer').innerHTML =
+                00 + ":" + 11;
+                console.log('re')
+                
+                startTimer();
+
+
+            }
+        </script>
+       
+
+
+        <!-- ************Showing resend OTP DIV************* -->
+        <script>
+            setTimeout(() => {
+                const box = document.getElementById('resend');
+                box.style.display = 'block';
+                
+
+               
+            }, 15000); 
+        </script>
+
+
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("OTP");
+                var y = document.getElementById("submit");
+                var z = document.getElementById("mobile");
+                x.style.display = "block";
+                z.style.display = "none";
+                y.style.display = "flex";
+
+
+                console.log("hide");
+
+            }
+        </script>
+
+        <script>
+            function hide(x) {
+                x.style.display = 'none';
+            }
+        </script>
+
+
+
+    </div>
+</body>
+
+</html>
